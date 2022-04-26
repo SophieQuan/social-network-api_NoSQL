@@ -73,7 +73,7 @@ const thoughtController = {
       .catch(err => res.json(err));
   },
 
-  // add a new friend
+  // create Reaction
   createReaction({ params, body }, res) {
     Thought.findOneAndUpdate(
       params.thoughtId,
@@ -90,7 +90,7 @@ const thoughtController = {
       .catch(err => res.json(err));
   },
 
-  // delete friend
+  // remove reaction
   removeReaction({ params }, res) {
     Thought.findByIdAndUpdate(
       params.thoughtId,
