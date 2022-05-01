@@ -27,11 +27,11 @@ const thoughtController = {
         res.sendStatus(400);
       });
   },
-  createThought({ params, body }, res) {
+  createThought({ body }, res) {
     Thought.create(body)
       .then(({ _id }) => {
-        return User.findOneAndUpdate(
-          { _id: params.userId },
+        return User.findByIdAndUpdate(
+          body.userId,
           { $push: { thoughts: _id } },
           { new: true }
         );

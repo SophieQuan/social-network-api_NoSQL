@@ -31,6 +31,7 @@ const ReactionSchema = new Schema(
     id: false
   }
 );
+
 const ThoughtSchema = new Schema(
   {
     thoughtText: {
